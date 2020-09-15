@@ -1,0 +1,43 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit2.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFrame2 *Frame2;
+//---------------------------------------------------------------------------
+__fastcall TFrame2::TFrame2(TComponent* Owner)
+	: TFrame(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+void TFrame2::setList(int type)
+{
+
+	switch (type) {
+	case 0:
+		this->Label1->Caption="Universidade";
+		break;
+	case 1:
+		this->Label1->Caption="Departamento";
+		break;
+	case 2:
+		this->Label1->Caption="Disciplina";
+		break;
+	case 3:
+		this->Label1->Caption="Aluno";
+		break;
+	default:
+		;
+	}
+
+}
+
+void TFrame2::setListBox()
+{
+    this->Sistema->ListBox1 = this->ListBox1;
+}
