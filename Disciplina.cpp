@@ -1,12 +1,15 @@
 #include "Disciplina.h"
+#include "Aluno.h"
+#include "Departamento.h"
+#include "ListaAlunos.h"
 #include <string>
 
 // construtora e destrutora
 Disciplina::Disciplina(int id, int tamanho_lista, const char* ac) :
-	ObjLAlunos(tamanho_lista)
 {
+	ObjLAlunos = new ListaAlunos(tamanho_lista);
 	pDeptoAssociado = NULL;
-	strcpy(area_conhecimento, ac);
+	area_conhecimento = ac;
 }
 Disciplina::~Disciplina()
 {
@@ -23,9 +26,9 @@ int Disciplina::getId()
 }
 void Disciplina::setNome(const char* n)
 {
-	strcpy(nome, n);
+	nome = n;
 }
-const char* Disciplina::getNome()
+string Disciplina::getNome()
 {
 	return nome;
 }
@@ -39,10 +42,6 @@ Departamento* Disciplina::getDepartamento() {
 // metodos de inclusao na lista e de listagem
 void Disciplina::incluaAluno(Aluno* pa)
 {
-	ObjLAlunos.incluaAluno(pa);
+	ObjLAlunos->incluaAluno(pa);
 	pa->setDisciplina(this);
-}
-void Disciplina::listeAlunos()
-{
-	ObjLAlunos.listeAlunos();
 }

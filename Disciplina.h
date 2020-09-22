@@ -1,24 +1,25 @@
 #pragma once
-#include "Departamento.h"
-#include "ListaAlunos.h"
+
+class Departamento;
+class Aluno;
+class ListaAlunos;
 
 class Disciplina
 {
 private:
 	int id;
-	char nome[150];
-	char area_conhecimento[150];
+	string nome;
+	string area_conhecimento;
 	Departamento* pDeptoAssociado;
-	ListaAlunos ObjLAlunos;
+	ListaAlunos* ObjLAlunos;
 public:
 	Disciplina(int id, int tamanho_lista = 45, const char* ac = "");
 	~Disciplina();
 	void setId(int i);
 	int getId();
 	void setNome(const char* n);
-	const char* getNome();
+	string getNome();
 	void setDepartamento(Departamento* pd);
 	Departamento* getDepartamento();
 	void incluaAluno(Aluno* pa);
-	void listeAlunos();
 };

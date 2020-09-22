@@ -19,7 +19,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	Frame21->Sistema = Sistema;
 	this->Frame21->Visible=False;
 	this->Frame31->Visible=False;
-    this->Frame21->setListBox();
 }
 
 void __fastcall TForm1::Universidade1Click(TObject *Sender)

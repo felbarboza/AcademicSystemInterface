@@ -2,6 +2,7 @@
 
 #include <vcl.h>
 #pragma hdrstop
+#include <typeinfo>
 
 #include "Unit2.h"
 //---------------------------------------------------------------------------
@@ -22,26 +23,31 @@ void TFrame2::setList(int type)
 	switch (type) {
 	case 0:
 		this->Label1->Caption="Universidade";
-		this->Sistema->LUniversidades.listeUniversidades();
+		this->Sistema->IteradorLUniversidades = Sistema->LUniversidades.LUniversidades.begin();
+
+		while (Sistema->IteradorLUniversidades!= Sistema->LUniversidades.LUniversidades.end())
+		{
+			string aux;
+			aux = (*(Sistema->IteradorLUniversidades))->getNome();
+			std::cout << typeid((*(Sistema->IteradorLUniversidades))->getNome()).name() << '\n';
+			AnsiString NomeUniv;
+			NomeUniv = aux.data();
+
+			ListBox1->Items->Add(NomeUniv);
+			Sistema->IteradorLUniversidades++;
+		}
 		break;
 	case 1:
 		this->Label1->Caption="Departamento";
-		this->Sistema->LDepartamentos.listeDepartamentos();
 		break;
 	case 2:
 		this->Label1->Caption="Disciplina";
-		this->Sistema->LDisciplinas.listeDisciplinas();
 		break;
 	case 3:
 		this->Label1->Caption="Aluno";
-		this->Sistema->LAlunos.listeAlunos();
 		break;
 	case 4:
 		this->Label1->Caption="Tudo";
-		this->Sistema->LUniversidades.listeUniversidades();
-		this->Sistema->LDepartamentos.listeDepartamentos();
-		this->Sistema->LDisciplinas.listeDisciplinas();
-		this->Sistema->LAlunos.listeAlunos();
 		break;
 	default:
 		;
@@ -49,7 +55,3 @@ void TFrame2::setList(int type)
 
 }
 
-void TFrame2::setListBox()
-{
-    this->Sistema->setListBox(this->ListBox1);
-}

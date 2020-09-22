@@ -32,14 +32,6 @@ Principal::~Principal() {
 
 }
 
-void Principal::setListBox(TListBox* ListBox1)
-{
-	this->LUniversidades.ListBox1 = ListBox1;
-	this->LDepartamentos.ListBox1 = ListBox1;
-	this->LDisciplinas.ListBox1 = ListBox1;
-	this->LAlunos.ListBox1 = ListBox1;
-}
-
 // funcoes para cadastro de novos objetos
 void Principal::CadUniversidade(const char* univ)
 {
@@ -94,22 +86,27 @@ void Principal::GravarTudo() {
 void Principal::GravarUniversidades() {
 	std::ofstream out("universidades.dat", std::ios::out);
 	if (out) {
-		ElUniversidade* paux = LUniversidades.getUniversidadePrim();
-		while (paux != NULL) {
-			out << (paux->getUniversidade())->getNome() << " " << (paux->getUniversidade())->getId() << endl;
-			paux = paux->pProx;
+		IteradorLUniversidades = LUniversidades.LUniversidades.begin();
+
+		while (IteradorLUniversidades!= LUniversidades.LUniversidades.end())
+		{
+			std::string str(((*(IteradorLUniversidades))->getNome() + std::string(" ")));
+			out << str << (*(IteradorLUniversidades))->getId() << endl;
+			IteradorLUniversidades++;
 		}
+			
 	}
 	out.close();
 }
 void Principal::GravarDepartamentos() {
 	std::ofstream out("departamentos.dat", std::ios::out);
 	if (out) {
-		ElDepartamento* paux = LDepartamentos.getDepartamentoPrim();
-		while (paux != NULL) {
-			out << (paux->getDepartamento())->getNome() << " " << (paux->getDepartamento())->getId()
-				<< " " << (paux->getUniversidade())->getNome() << endl;
-			paux = paux->pProx;
+		IteradorLDepartamentos = LDepartamentos.LDepartamentos.begin();
+		while (IteradorLDepartamentos!= LDepartamentos.LDepartamentos.end()) {
+			Departamento* aux = ((*(IteradorLDepartamentos));
+			std::string str(aux->getNome() + std::string(" ") + std::string(aux->getId()) + std::string(" ") + aux->getUniversidade()->getNome());
+			out << str << endl;
+			IteradorLDepartamentos++;
 		}
 	}
 	out.close();
@@ -117,11 +114,12 @@ void Principal::GravarDepartamentos() {
 void Principal::GravarDisciplinas() {
 	std::ofstream out("disciplinas.dat", std::ios::out);
 	if (out) {
-		ElDisciplina* paux = LDisciplinas.getDisciplinaPrim();
-		while (paux != NULL) {
-			out << (paux->getDisciplina())->getNome() << " " << (paux->getDisciplina())->getId()
-				<< " " << (paux->getDepartamento())->getNome() << endl;
-			paux = paux->pProx;
+		IteradorLDisciplinas = LDisciplinas.LDisciplinas.begin();
+		while (IteradorLDisciplinas!= LDisciplinas.LDisciplinas.end()) {
+			Disciplina* aux = ((*(IteradorLDisciplinas));
+			std::string str(aux->getNome() + std::string(" ") + std::string(aux->getId()) + std::string(" ") + aux->getDepartamento()->getNome());
+			out << str << endl;
+			IteradorLDisciplinas++;
 		}
 	}
 	out.close();
@@ -129,16 +127,17 @@ void Principal::GravarDisciplinas() {
 void Principal::GravarAlunos() {
 	std::ofstream out("alunos.dat", std::ios::out);
 	if (out) {
-		ElAluno* paux = LAlunos.getAlunoPrim();
-		while (paux != NULL) {
-			out << (paux->getAluno())->getNome() << " " << (paux->getAluno())->getRA() << " " <<
-				(paux->getAluno())->getId() << " " << (paux->getDisciplina())->getNome() << endl;
-			paux = paux->pProx;
+		IteradorLAlunos = LAlunos.LAlunos.begin();
+		while (IteradorLAlunos!= LAlunos.LAlunos.end()) {
+			Aluno* aux = ((*(IteradorLAlunos));
+			std::string str(aux->getNome() + std::string(" ") + std::string(aux->getRA()) + std::string(" ") + std::string(aux->getId()) + std::string(" ") + aux->getDisciplina()->getNome());
+			out << str << endl;
+			IteradorLAlunos++;
 		}
 	}
 	out.close();
 }
-// funcoes para a recuperacao de objetos em arquivo
+// auncoes para a recuperacao de objetos em arquivo
 void Principal::RecuperarTudo() {
 	RecuperarUniversidades();
 	RecuperarDepartamentos();

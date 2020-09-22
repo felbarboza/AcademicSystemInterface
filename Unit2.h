@@ -19,7 +19,6 @@ public:		// User declarations
 	__fastcall TFrame2(TComponent* Owner);
 	void setList(int type);
 	Principal *Sistema;
-    void setListBox();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFrame2 *Frame2;

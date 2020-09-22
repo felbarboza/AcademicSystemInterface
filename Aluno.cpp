@@ -1,7 +1,10 @@
 #include "Aluno.h"
+#include "Disciplina.h"
+
 // construtora e destrutora
-Aluno::Aluno(int i) : Pessoa(id)
+Aluno::Aluno(int i)
 {
+    id=i;
 	RA = 0;
 }
 Aluno::~Aluno() {
@@ -24,7 +27,15 @@ Disciplina* Aluno::getDisciplina()
 {
 	return pDiscAssociada;
 }
-int Aluno::getId()
-{
+void Aluno::setId(int i) {
+	id = i;
+}
+int Aluno::getId() {
 	return id;
+}
+void Aluno::setNome(const char* n){
+	nome=n;
+}
+string Aluno::getNome(){
+    return nome;
 }

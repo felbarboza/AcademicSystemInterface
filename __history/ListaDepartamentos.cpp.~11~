@@ -1,0 +1,41 @@
+#include "ListaDepartamentos.h"
+#include "Universidade.h"
+#include <fstream>
+#include <string>
+#include <iostream>
+using std::cout;
+using std::endl;
+
+ListaDepartamentos::ListaDepartamentos(int nd)
+{
+}
+void ListaDepartamentos::incluaDepartamento(Departamento* pdi)
+{
+	ElDepartamento* paux;
+	paux = new ElDepartamento();
+	paux->setDepartamento(pdi);
+	LDepartamentos.push_back(paux);
+}
+// localiza uma universidade de nome "n" na lista de universidades
+Departamento* ListaDepartamentos::localizar(const char* n)
+{
+	std::list<ElDepartamento*>::iterator IteradorLDepartamentos = LDepartamentos.begin();
+	while(((*(IteradorLUniversidades))->getNome().compare(univ))){
+		IteradorLUniversidades++;
+	}
+	return (*(IteradorLUniversidades))->getUniversidade();
+	ElDepartamento* paux;
+	paux = pElDepartamentoPrim;
+	while (paux != NULL)
+	{
+		if (0 == strcmp(n, paux->getNome()))
+		{
+			return paux->getDepartamento();
+		}
+		paux = paux->pProx;
+	}
+	return NULL;
+}
+ElDepartamento* ListaDepartamentos::getDepartamentoPrim() {
+	return pElDepartamentoPrim;
+}

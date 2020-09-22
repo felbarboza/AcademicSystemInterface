@@ -16,9 +16,9 @@ Universidade::~Universidade()
 // sets e gets
 void Universidade::setNome(const char* n)
 {
-	strcpy(nome, n);
+	nome=n;
 }
-const char* Universidade::getNome()
+string Universidade::getNome()
 {
 	return nome;
 }
@@ -31,7 +31,4 @@ void Universidade::incluaDepartamento(Departamento* pd) {
 	ObjLDepartamentos.incluaDepartamento(pd);
 	pd->setUniversidade(this);
 
-}
-void Universidade::listeDepartamentos() {
-	ObjLDepartamentos.listeDepartamentos();
 }

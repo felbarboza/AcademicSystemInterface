@@ -64,7 +64,6 @@ __published:	// IDE-managed Components
 private:
 	void tirarVisible();	// User declarations
 public:		// User declarations
-	TListBox* listBox;
 	__fastcall TForm1(TComponent* Owner);
 	Principal *Sistema;
 };

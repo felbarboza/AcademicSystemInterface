@@ -1,23 +1,18 @@
 #pragma once
-#include "ElAluno.h"
-#include "Aluno.h"
+
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
+#include "Aluno.h"
+#include <list>
 
 class ListaAlunos
 {
 private:
-	int cont_alunos;
-	int numero_alunos;
-	ElAluno* pElAlunoPrim;
-	ElAluno* pElAlunoAtual;
 public:
 	ListaAlunos(int na = 45);
 	~ListaAlunos();
 	void incluaAluno(Aluno* pa);
-	void listeAlunos();
-	ElAluno* getAlunoPrim();
-    TListBox* ListBox1;
+	std::list<Aluno*> LAlunos;
 };

@@ -1,0 +1,17 @@
+#pragma once
+#include "Pessoa.h"
+
+class Aluno : public Pessoa
+{
+private:
+	int RA;
+	Disciplina* pDiscAssociada;
+	int id;
+public:
+	Aluno(int i);
+	~Aluno();
+	void setRA(int ra);
+	int getRA();
+	void setDisciplina(Disciplina* pd);
+	Disciplina* getDisciplina();
+};

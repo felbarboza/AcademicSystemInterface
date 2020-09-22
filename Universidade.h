@@ -1,18 +1,21 @@
 #pragma once
 #include "ListaDepartamentos.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 class Universidade
 {
 private:
-	char nome[130];
+	string nome;
 	ListaDepartamentos ObjLDepartamentos;
 	int id;
 public:
 	Universidade(int id);
 	~Universidade();
 	void setNome(const char* n);
-	const char* getNome();
+	string getNome();
 	void incluaDepartamento(Departamento* pd);
-	void listeDepartamentos();
 	int getId();
 };

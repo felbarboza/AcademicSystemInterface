@@ -25,14 +25,6 @@ object Form1: TForm1
     ExplicitLeft = 8
     ExplicitTop = 8
     ExplicitHeight = 287
-    inherited Edit1: TEdit
-      Height = 21
-      ExplicitHeight = 21
-    end
-    inherited Edit2: TEdit
-      Height = 21
-      ExplicitHeight = 21
-    end
   end
   inline Frame21: TFrame2
     Left = -2

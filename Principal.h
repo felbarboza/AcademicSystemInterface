@@ -1,12 +1,19 @@
 #pragma once
 #include "Pessoa.h"
+#include "Aluno.h"
 #include "ListaUniversidades.h"
 #include "ListaDepartamentos.h"
+#include "ListaAlunos.h"
 #include "ListaDisciplinas.h"
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
+#include <iostream>
+#include <list>
+#include <string>
+
+using namespace std;
 
 class Principal
 {
@@ -33,7 +40,12 @@ public:
 	void RecuperarDepartamentos();
 	void RecuperarDisciplinas();
 	void RecuperarAlunos();
-	void setListBox(TListBox* ListBox1);
+
+	list<Universidade*>::iterator	IteradorLUniversidades;
+	list<Departamento*>::iterator	IteradorLDepartamentos;
+	list<Disciplina*>::iterator		IteradorLDisciplinas;
+	list<Aluno*>::iterator			IteradorLAlunos;
+
 	// Listas
 	ListaUniversidades LUniversidades;
 	ListaDepartamentos LDepartamentos;

@@ -1,24 +1,21 @@
 #pragma once
-#include "ElDepartamento.h"
 #include "Departamento.h"
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
+#include <iostream>
+#include <list>
 
+using namespace std;
 class ListaDepartamentos
 {
 private:
-	int cont_disc;
-	int numero_disc;
-	ElDepartamento *pElDepartamentoPrim;
-	ElDepartamento *pElDepartamentoAtual;
 public:
 	ListaDepartamentos(int nd = 1000);
 	~ListaDepartamentos();
 	void incluaDepartamento(Departamento* pdi);
-	void listeDepartamentos();
 	Departamento* localizar(const char* n);
-	ElDepartamento* getDepartamentoPrim();
-    TListBox* ListBox1;
+	std::list<Departamento*> LDepartamentos;
+	std::list<Departamento*>::iterator IteradorLDepartamentos;
 };
