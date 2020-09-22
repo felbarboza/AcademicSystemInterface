@@ -107,6 +107,9 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <ILINK_CaseSensitive>true</ILINK_CaseSensitive>
         <LinkPackageImports>rtl.bpi;vcl.bpi</LinkPackageImports>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -143,38 +146,6 @@
             <VirtualFolder>{18ECF678-3812-47D0-AB07-3020738ACA3C}</VirtualFolder>
             <BuildOrder>7</BuildOrder>
         </None>
-        <CppCompile Include="ElAluno.cpp">
-            <VirtualFolder>{0574CF24-83A6-4BC9-84F7-B3B788F9B994}</VirtualFolder>
-            <BuildOrder>21</BuildOrder>
-        </CppCompile>
-        <None Include="ElAluno.h">
-            <VirtualFolder>{18ECF678-3812-47D0-AB07-3020738ACA3C}</VirtualFolder>
-            <BuildOrder>8</BuildOrder>
-        </None>
-        <CppCompile Include="ElDepartamento.cpp">
-            <VirtualFolder>{0574CF24-83A6-4BC9-84F7-B3B788F9B994}</VirtualFolder>
-            <BuildOrder>22</BuildOrder>
-        </CppCompile>
-        <None Include="ElDepartamento.h">
-            <VirtualFolder>{18ECF678-3812-47D0-AB07-3020738ACA3C}</VirtualFolder>
-            <BuildOrder>9</BuildOrder>
-        </None>
-        <CppCompile Include="ElDisciplina.cpp">
-            <VirtualFolder>{0574CF24-83A6-4BC9-84F7-B3B788F9B994}</VirtualFolder>
-            <BuildOrder>23</BuildOrder>
-        </CppCompile>
-        <None Include="ElDisciplina.h">
-            <VirtualFolder>{18ECF678-3812-47D0-AB07-3020738ACA3C}</VirtualFolder>
-            <BuildOrder>10</BuildOrder>
-        </None>
-        <CppCompile Include="ElUniversidade.cpp">
-            <VirtualFolder>{0574CF24-83A6-4BC9-84F7-B3B788F9B994}</VirtualFolder>
-            <BuildOrder>24</BuildOrder>
-        </CppCompile>
-        <None Include="ElUniversidade.h">
-            <VirtualFolder>{18ECF678-3812-47D0-AB07-3020738ACA3C}</VirtualFolder>
-            <BuildOrder>11</BuildOrder>
-        </None>
         <CppCompile Include="ListaAlunos.cpp">
             <VirtualFolder>{0574CF24-83A6-4BC9-84F7-B3B788F9B994}</VirtualFolder>
             <BuildOrder>25</BuildOrder>
@@ -206,14 +177,6 @@
         <None Include="ListaUniversidades.h">
             <VirtualFolder>{18ECF678-3812-47D0-AB07-3020738ACA3C}</VirtualFolder>
             <BuildOrder>15</BuildOrder>
-        </None>
-        <CppCompile Include="Pessoa.cpp">
-            <VirtualFolder>{0574CF24-83A6-4BC9-84F7-B3B788F9B994}</VirtualFolder>
-            <BuildOrder>30</BuildOrder>
-        </CppCompile>
-        <None Include="Pessoa.h">
-            <VirtualFolder>{18ECF678-3812-47D0-AB07-3020738ACA3C}</VirtualFolder>
-            <BuildOrder>16</BuildOrder>
         </None>
         <CppCompile Include="Principal.cpp">
             <VirtualFolder>{0574CF24-83A6-4BC9-84F7-B3B788F9B994}</VirtualFolder>
@@ -258,9 +221,9 @@
             <VirtualFolder>{18ECF678-3812-47D0-AB07-3020738ACA3C}</VirtualFolder>
             <BuildOrder>33</BuildOrder>
         </None>
+        <FormResources Include="Unit3.dfm"/>
         <FormResources Include="Unit1.dfm"/>
         <FormResources Include="Unit2.dfm"/>
-        <FormResources Include="Unit3.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -291,6 +254,10 @@
                     <VFOLDER ID="{18ECF678-3812-47D0-AB07-3020738ACA3C}" name="header"/>
                     <VFOLDER ID="{0574CF24-83A6-4BC9-84F7-B3B788F9B994}" name="src"/>
                 </VFOLDERS>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k270.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp270.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="3">
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32270mt.dll" Class="DependencyModule">
@@ -298,7 +265,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgcrtl.dylib" Class="DependencyModule">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c270mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgstl.dylib" Class="DependencyModule">
                     <Platform Name="OSX64">
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -310,11 +282,6 @@
                 </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgstl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -355,8 +322,8 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c270mt.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

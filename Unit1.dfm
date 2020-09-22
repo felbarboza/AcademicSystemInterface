@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 303
-  ClientWidth = 575
+  ClientHeight = 366
+  ClientWidth = 668
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,7 +17,7 @@ object Form1: TForm1
   inline Frame31: TFrame3
     Left = 8
     Top = 8
-    Width = 569
+    Width = 640
     Height = 287
     Enabled = False
     TabOrder = 0
@@ -28,12 +28,13 @@ object Form1: TForm1
   end
   inline Frame21: TFrame2
     Left = -2
-    Top = 8
-    Width = 569
-    Height = 285
+    Top = 0
+    Width = 659
+    Height = 353
     TabOrder = 1
     ExplicitLeft = -2
-    ExplicitTop = 8
+    ExplicitWidth = 659
+    ExplicitHeight = 353
   end
   object Menu: TMainMenu
     Left = 528

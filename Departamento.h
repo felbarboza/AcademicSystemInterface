@@ -1,17 +1,17 @@
 #pragma once
 #include <string>
-using namespace std;
+#include <vector>
 
 class Universidade;
 class Disciplina;
-class ListaDisciplinas;
+
+using namespace std;
 
 class Departamento
 {
 private:
 	string nome;
 	Universidade* pUniv;
-	ListaDisciplinas* pObjLDisciplinas;
 	int id;
 public:
 	Departamento(int id);
@@ -22,4 +22,5 @@ public:
 	Universidade* getUniversidade();
 	void incluaDisciplina(Disciplina* pdi);
 	int getId();
+	vector<Disciplina*> pObjLDisciplinas;
 };

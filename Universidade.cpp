@@ -1,9 +1,4 @@
 #include "Universidade.h"
-#include <string>
-#include <iostream>
-using std::cout;
-using std::endl;
-using std::cin;
 
 // construtora e destrutora
 Universidade::Universidade(int Id)
@@ -28,7 +23,7 @@ int Universidade::getId() {
 
 // metodos de inclusao na lista e de listagem
 void Universidade::incluaDepartamento(Departamento* pd) {
-	ObjLDepartamentos.incluaDepartamento(pd);
+	ObjLDepartamentos.push_back(pd);
 	pd->setUniversidade(this);
 
 }

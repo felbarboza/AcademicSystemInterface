@@ -1,19 +1,19 @@
 #pragma once
+#include <vector>
+#include <string>
+#include "Departamento.h"
+#include "Aluno.h"
 
-class Departamento;
-class Aluno;
-class ListaAlunos;
+using namespace std;
 
 class Disciplina
 {
 private:
 	int id;
 	string nome;
-	string area_conhecimento;
 	Departamento* pDeptoAssociado;
-	ListaAlunos* ObjLAlunos;
 public:
-	Disciplina(int id, int tamanho_lista = 45, const char* ac = "");
+	Disciplina(int id);
 	~Disciplina();
 	void setId(int i);
 	int getId();
@@ -22,4 +22,5 @@ public:
 	void setDepartamento(Departamento* pd);
 	Departamento* getDepartamento();
 	void incluaAluno(Aluno* pa);
+	vector<Aluno*> ObjLAlunos;
 };

@@ -1,7 +1,8 @@
 #pragma once
-#include "ListaDepartamentos.h"
 #include <iostream>
 #include <string>
+#include <vector>
+#include "Departamento.h"
 
 using namespace std;
 
@@ -9,7 +10,6 @@ class Universidade
 {
 private:
 	string nome;
-	ListaDepartamentos ObjLDepartamentos;
 	int id;
 public:
 	Universidade(int id);
@@ -18,4 +18,5 @@ public:
 	string getNome();
 	void incluaDepartamento(Departamento* pd);
 	int getId();
+	vector<Departamento*> ObjLDepartamentos;
 };

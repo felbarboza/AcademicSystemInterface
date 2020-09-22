@@ -1,15 +1,9 @@
 #include "Disciplina.h"
-#include "Aluno.h"
-#include "Departamento.h"
-#include "ListaAlunos.h"
-#include <string>
 
 // construtora e destrutora
-Disciplina::Disciplina(int id, int tamanho_lista, const char* ac) :
+Disciplina::Disciplina(int id)
 {
-	ObjLAlunos = new ListaAlunos(tamanho_lista);
 	pDeptoAssociado = NULL;
-	area_conhecimento = ac;
 }
 Disciplina::~Disciplina()
 {
@@ -42,6 +36,6 @@ Departamento* Disciplina::getDepartamento() {
 // metodos de inclusao na lista e de listagem
 void Disciplina::incluaAluno(Aluno* pa)
 {
-	ObjLAlunos->incluaAluno(pa);
+	ObjLAlunos.push_back(pa);
 	pa->setDisciplina(this);
 }

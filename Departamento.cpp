@@ -1,20 +1,14 @@
 #include "Departamento.h"
-#include "ListaDisciplinas.h"
 #include "Universidade.h"
 #include "Disciplina.h"
 
 // construtora e destrutora
 Departamento::Departamento(int id)
 {
-  	this->id = id;
-	pObjLDisciplinas = new ListaDisciplinas(-1);
+	this->id = id;
 }
 Departamento::~Departamento()
 {
-	if (pObjLDisciplinas)
-	{
-		delete pObjLDisciplinas;
-	}
 }
 // sets e gets
 void Departamento::setNome(const char* n)
@@ -40,6 +34,6 @@ int Departamento::getId() {
 // metodos de inclusao na lista e de listagem
 void Departamento::incluaDisciplina(Disciplina* pdi)
 {
-	pObjLDisciplinas->incluaDisciplina(pdi);
+	pObjLDisciplinas.push_back(pdi);
 	pdi->setDepartamento(this);
 }

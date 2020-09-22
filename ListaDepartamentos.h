@@ -1,11 +1,6 @@
 #pragma once
-#include "Departamento.h"
-#include <System.Classes.hpp>
-#include <Vcl.Controls.hpp>
-#include <Vcl.StdCtrls.hpp>
-#include <Vcl.Forms.hpp>
-#include <iostream>
 #include <list>
+#include "Departamento.h"
 
 using namespace std;
 class ListaDepartamentos

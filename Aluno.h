@@ -1,10 +1,8 @@
 #pragma once
 #include <string>
+#include "Universidade.h"
 
 using namespace std;
-
-class Disciplina;
-class ListaAlunos;
 
 class Aluno
 {

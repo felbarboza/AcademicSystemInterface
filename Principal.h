@@ -1,14 +1,8 @@
 #pragma once
-#include "Pessoa.h"
-#include "Aluno.h"
 #include "ListaUniversidades.h"
 #include "ListaDepartamentos.h"
-#include "ListaAlunos.h"
 #include "ListaDisciplinas.h"
-#include <System.Classes.hpp>
-#include <Vcl.Controls.hpp>
-#include <Vcl.StdCtrls.hpp>
-#include <Vcl.Forms.hpp>
+#include "ListaAlunos.h"
 #include <iostream>
 #include <list>
 #include <string>

@@ -12,12 +12,13 @@
 // Turma: S71 / S02.
 
 #include "Principal.h"
+
 #include <fstream>
-#include <iostream>
 
 using std::cout;
 using std::endl;
 using std::cin;
+
 
 Principal::Principal() :
 	// contadores da quantidade de objetos existentes
@@ -103,8 +104,8 @@ void Principal::GravarDepartamentos() {
 	if (out) {
 		IteradorLDepartamentos = LDepartamentos.LDepartamentos.begin();
 		while (IteradorLDepartamentos!= LDepartamentos.LDepartamentos.end()) {
-			Departamento* aux = ((*(IteradorLDepartamentos));
-			std::string str(aux->getNome() + std::string(" ") + std::string(aux->getId()) + std::string(" ") + aux->getUniversidade()->getNome());
+			Departamento* aux = (*(IteradorLDepartamentos));
+			std::string str(aux->getNome() + std::string(" ") + std::to_string(aux->getId()) + std::string(" ") + aux->getUniversidade()->getNome());
 			out << str << endl;
 			IteradorLDepartamentos++;
 		}
@@ -116,8 +117,8 @@ void Principal::GravarDisciplinas() {
 	if (out) {
 		IteradorLDisciplinas = LDisciplinas.LDisciplinas.begin();
 		while (IteradorLDisciplinas!= LDisciplinas.LDisciplinas.end()) {
-			Disciplina* aux = ((*(IteradorLDisciplinas));
-			std::string str(aux->getNome() + std::string(" ") + std::string(aux->getId()) + std::string(" ") + aux->getDepartamento()->getNome());
+			Disciplina* aux = (*(IteradorLDisciplinas));
+			std::string str(aux->getNome() + std::string(" ") + std::to_string(aux->getId()) + std::string(" ") + aux->getDepartamento()->getNome());
 			out << str << endl;
 			IteradorLDisciplinas++;
 		}
@@ -129,8 +130,8 @@ void Principal::GravarAlunos() {
 	if (out) {
 		IteradorLAlunos = LAlunos.LAlunos.begin();
 		while (IteradorLAlunos!= LAlunos.LAlunos.end()) {
-			Aluno* aux = ((*(IteradorLAlunos));
-			std::string str(aux->getNome() + std::string(" ") + std::string(aux->getRA()) + std::string(" ") + std::string(aux->getId()) + std::string(" ") + aux->getDisciplina()->getNome());
+			Aluno* aux = (*(IteradorLAlunos));
+			std::string str(aux->getNome() + std::string(" ") + std::to_string(aux->getRA()) + std::string(" ") + std::to_string(aux->getId()) + std::string(" ") + aux->getDisciplina()->getNome());
 			out << str << endl;
 			IteradorLAlunos++;
 		}

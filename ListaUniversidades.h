@@ -1,11 +1,7 @@
 #pragma once
-#include "Universidade.h"
-#include <System.Classes.hpp>
-#include <Vcl.Controls.hpp>
-#include <Vcl.StdCtrls.hpp>
-#include <Vcl.Forms.hpp>
 #include <iostream>
 #include <list>
+#include "Universidade.h"
 
 class ListaUniversidades
 {
@@ -16,5 +12,5 @@ public:
 	void incluaUniversidade(Universidade* pdi);
 	Universidade* localizar(const char* univ);
 	std::list<Universidade*> LUniversidades;
-    list<Universidade*>::iterator IteradorLUniversidades;
+    std::list<Universidade*>::iterator IteradorLUniversidades;
 };

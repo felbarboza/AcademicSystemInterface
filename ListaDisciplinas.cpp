@@ -1,7 +1,4 @@
 #include "ListaDisciplinas.h"
-#include <iostream>
-using std::cout;
-using std::endl;
 
 ListaDisciplinas::ListaDisciplinas(int nd)
 {

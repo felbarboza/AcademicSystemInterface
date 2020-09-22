@@ -1,9 +1,4 @@
 #pragma once
-
-#include <System.Classes.hpp>
-#include <Vcl.Controls.hpp>
-#include <Vcl.StdCtrls.hpp>
-#include <Vcl.Forms.hpp>
 #include "Aluno.h"
 #include <list>
 

@@ -1,14 +1,9 @@
 #include "ListaDepartamentos.h"
-#include "Universidade.h"
-#include <fstream>
-#include <string>
-#include <iostream>
-using std::cout;
-using std::endl;
 
 ListaDepartamentos::ListaDepartamentos(int nd)
 {
 }
+ListaDepartamentos::~ListaDepartamentos(){}
 void ListaDepartamentos::incluaDepartamento(Departamento* pdi)
 {
 	LDepartamentos.push_back(pdi);

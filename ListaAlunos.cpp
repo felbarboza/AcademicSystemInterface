@@ -1,11 +1,4 @@
 #include "ListaAlunos.h"
-#include "Disciplina.h"
-#include <fstream>
-using std::ofstream;
-using std::ifstream;
-#include <iostream>
-using std::cout;
-using std::endl;
 
 ListaAlunos::ListaAlunos(int na)
 {

@@ -1,8 +1,4 @@
 #include "ListaUniversidades.h"
-#include <iostream>
-#include <string>
-using std::cout;
-using std::endl;
 
 ListaUniversidades::ListaUniversidades(int nd)
 {
